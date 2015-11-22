@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+	<!-- css and metadata -->
+	<head>
+	    <meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <title>{% block title %}This shouldnt be here{% endblock %}</title>
+	    {% block css %}
+            <link rel="stylesheet" href={% static "css/foundation.css" %} />
+	    <link rel="stylesheet" href={% static "css/foundation-icons.css" %} />
+	    <link rel="stylesheet" href={% static "css/normalize.css" %} />
+	    <link rel="stylesheet" href={% static "APHive/css/style.css" %} />
+	    <script src= {% static "js/modernizr.js" %}></script>
+	    <script src= {% static "js/jquery.js" %}></script>
+	    {% endblock css %}
+	</head>
+	<!-- content area -->
+	<body>
+	    <!-- navbar -->
+	    {% include "navbar.html" %}
+
+	    <!-- page-unique content -->
+	    <div id="content">
+		{% block content %}
+
+		{% endblock %}
+	    </div>
+
+            <!-- javascript -->
+	    {% block js %}	    
+	    <script src= {% static "js/fastclick.js" %}></script>
+	    <script src= {% static "js/foundation.min.js" %}></script>
+	    <script src= {% static "js/angular.min.js" %}></script>
+	    <script> $(document).foundation();</script>
+	    {% endblock js %}
+	</body>
+</html>
+
+

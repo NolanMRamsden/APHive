@@ -1,0 +1,14 @@
+from django.db import models
+from apis.models import Api
+from members.models import Member
+
+class Review(models.Model):
+	def __unicode__(self):
+		return self.api.title
+	text = models.TextField(max_length=200)
+	api = models.ForeignKey(Api)
+	writer = models.ForeignKey(Member)
+	submitted = models.DateField()
+	usability = models.NullBooleanField(null=True)
+	documentation = models.NullBooleanField(null=True)
+	reliability = models.NullBooleanField(null=True)

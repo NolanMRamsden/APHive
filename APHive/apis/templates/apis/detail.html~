@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ api.title  }}{% endblock %}
+
+{% block content %}	
+	<link rel="stylesheet" href={% static "apis/css/flipoutimage.css" %} />
+	<link rel="stylesheet" href={% static "apis/css/chart.css" %} />
+	<link rel="stylesheet" href={% static "apis/css/apis.css" %} />
+	{% block preview %}
+	<div class="row">
+		{% include "apis:preview_api.html" with api=api %}
+	</div>
+	<div class="row collapse">
+		<div class="small-12 column">
+			<p style="margin: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ api.full_desc }}<p>
+		</div>
+	</div>
+	{% endblock preview %}
+	<div class="row collapse">
+		<hr class="primary-color-outline" />
+	</div>
+	{% block details %}
+
+
+	<div class="row collapse">
+		<ul class="tabs" data-tab role="tablist" data-options="deep_linking:true">
+			<li class="tab-title active">
+				<a href="#Endpoints" class="tab-header" tabindex=0>Endpoints</a>
+			</li>
+			<li class="tab-title">
+				<a href="#Reviews" class="tab-header" tabindex=0>Reviews</a>
+			</li>
+			<li class="tab-title">
+				<a href="#Clients" class="tab-header" tabindex=0>Clients</a>
+			</li>
+		</ul>
+		<div class="tabs-content primary-color-outline section-holder">
+			<section role="tabpanel" aria-hidden="false" class="content active" id="Endpoints">
+				{% include "api_endpoints.html" with endpoints=endpoints %}
+			</section>
+			<section role="tabpanel" aria-hidden="true" class="content" id="Reviews">
+				{% include "api_reviews.html" %}
+			</section>
+			<section role="tabpanel" aria-hidden="true" class="content" id="Clients">
+				<h2>Fourth panel content goes here...</h2>
+			</section>
+		</div>
+	</div>
+	{% endblock details %}
+{% endblock %}

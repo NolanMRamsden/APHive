@@ -1,0 +1,10 @@
+.member-photo  {
+	height: 150px;
+	width: 150px;
+} 
+
+.tabs dd.active a, .tabs .tab-title.active a {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}

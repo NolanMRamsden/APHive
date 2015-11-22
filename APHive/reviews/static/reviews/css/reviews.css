@@ -1,0 +1,66 @@
+.thumbs-holder {
+	text-align:right;	
+}
+
+.review-holder {
+
+}
+
+.review-text {
+	margin-top: 5px;
+}
+
+.selector {
+	color: #dddddd;
+	font-size: 2.0rem;
+	margin-left: 20px;
+	cursor: pointer; 
+	cursor: hand;
+}
+
+.selection-table {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.submitted-date {
+	color: #bbbbbb;
+}
+
+.like {
+	color: green;
+}
+
+.dislike {
+	color: red;
+}
+
+.reviews-holder {
+	max-height: 700px;
+	overflow: auto;
+}
+
+.submit-review {
+	color: #222222;
+}
+.submit-review:disabled{
+	background-color: #7f337f;
+	color: #ffffff;
+}
+.submit-review:disabled:hover{
+	background-color: #7f337f;
+	color: #ffffff;
+}
+
+.submit-review:hover:enabled{
+	background-color: #4d004b;
+	color: #ffffff;
+}
+
+.review-underline {
+	color: #4d004b;
+	text-decoration: underline;
+}

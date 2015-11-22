@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" href={% static "apis/css/flipoutimage.css" %} />
+{% for api in apis %}
+	{% if not forloop.counter|divisibleby:2 %} 
+		{% if forloop.counter > 1 %}</div>{% endif %}
+		<div class="row collapse">	
+	{% endif %}
+		<div class="small-12 large-6 column">
+			{% include "preview_api_icon.html" with api=api %}
+		</div>
+{% empty %}
+	<h1> No APIs :(<h2>
+{% endfor %}
+</div>

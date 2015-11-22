@@ -1,0 +1,9 @@
+<div class="row collapse primary-color-outline">
+	<div class="small-3 columns primary-color-outline">
+		<img src={{ api.icon.url }} />
+	</div>
+	<div class="small-9 columns">
+		<h2>{{ api.title }}</h2>
+		<h4>{{ api.brief_desc }}<h4>
+	</div>
+</div>

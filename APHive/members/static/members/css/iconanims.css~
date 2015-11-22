@@ -1,0 +1,76 @@
+.icon-holder {
+	height: 50px;
+	line-height: 50px;
+	vertical-align: center;
+}
+.icon-content {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;   
+}
+
+.icon-button {
+	border-radius: 2.6rem;
+	width: 2.6rem;
+	height: 2.6rem;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	font-size: 2rem;
+	background: white; 
+}
+.icon-button span {
+	display: block;
+	border-radius: 0;
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transition: all 0.3s; 
+}
+.icon-button:hover span {
+	display: block;
+	border-radius: 2.6rem;
+	width: 2.6rem;
+	height: 2.6rem;
+	margin: -1.3rem; 
+}
+.icon-button i {
+	background: none;
+	height: 2.6rem;
+	width: 2.6rem;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	line-height: 2.6rem;
+	transition: all 0.3s; 
+}
+.twitter span {
+  background-color: #4099ff; }
+.facebook span {
+  background-color: #3B5998; }
+.stack-overflow span {
+  background-color: #000000; }
+.github span {
+  background-color: #000000; }
+.mail span {
+  background-color: #990097; }
+.icon-button .fi-social-twitter {
+  color: #4099ff; }
+.icon-button .fi-social-facebook {
+  color: #3b5998; }
+.icon-button .fi-social-linkedin {
+  color: #3b5998; }
+.icon-button .fi-social-github {
+  color: #000000; }
+.icon-button .fi-social-stack-overflow {
+  color: #FF760F; }
+.icon-button .fi-mail {
+  color: #990097; }
+.icon-button:hover .fi-social-twitter, .icon-button:hover .fi-social-facebook, .icon-button:hover .fi-social-stack-overflow,
+.icon-button:hover .fi-social-linkedin,.icon-button:hover .fi-social-github,.icon-button:hover .fi-mail {
+  color: white;
+  font-size: 2.6rem;
+  line-height: 2.6rem; }

@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<link rel="stylesheet" href={% static "reviews/css/reviews.css" %} />
+<link rel="stylesheet" href={% static "reviews/css/chart.css" %} />
+
+<div class="row collapse">
+	<div class="large-12 columns">
+	    <table class="chart">
+	      <tbody>
+		<tr>
+		  <td>
+		    <p class="percentage">{{ usable_percent }}%</p>
+		  </td>
+		  <td class="chart">
+		    of users found this easy to use
+		    <div class="barchart">
+		      <span class="meter" style="width: {{ usable_percent }}%"></span>
+		    </div>
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    <p class="percentage">{{ doc_percent }}%</p>
+		  </td>
+		  <td class="chart">
+		    of users said the API had good documentation
+		    <div class="barchart">
+		      <span class="meter" style="width: {{ doc_percent }}%"></span>
+		    </div>
+		  </td>
+		</tr>
+		<tr>
+		  <td>
+		    <p class="percentage">{{ reliable_percent }}%</p>
+		  </td>
+		  <td class="chart">
+		    of users said the API is reliable
+		    <div class="barchart">
+		      <span class="meter" style="width: {{ reliable_percent }}%"></span>
+		    </div>
+		  </td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+<hr class="primary-color-outline" />
+<form  method="post" action="" class="row collapse" name="form">
+	<div class="small-12 large-6 column">
+		 <textarea rows="8" cols="50" maxlength="500" placeholder="what did you think? Leave your comments here." class="review-input" id="review_text"></textarea> 
+	</div>
+	<div class="small-12 large-6 column">
+	<table class="selection-table">
+		<tr>
+			<td><h5 class="show-for-small-only">Usable</h5><h5 class="show-for-medium-up">Usability</h5></td>
+			<td>&nbsp;<i class="use-one fi-like selector" id="use_like"></i>&nbsp;
+			    &nbsp;<span class="use-two selector review-underline" id="use_meg">--</span>&nbsp;
+			    &nbsp;<i class="use-three fi-dislike selector" id="use_dislike"></i>&nbsp;
+			    <td>
+		</tr>
+		<tr>
+			<td><h5 class="show-for-small-only">Docs</h5><h5 class="show-for-medium-up">Documentation</h5></td>			<td>&nbsp;<i class="docs-one fi-like selector" id="docs_like"></i>&nbsp;
+			    &nbsp;<span class="docs-two selector review-underline" id="docs_meh">--</span>&nbsp;
+			    &nbsp;<i class="docs-three fi-dislike selector" id="docs_dislike"></i>&nbsp;
+			    <td>
+		</tr>
+		<tr>
+			<td><h5 class="show-for-small-only">Reliable</h5><h5 class="show-for-medium-up">Reliability</h5></td>
+			<td>&nbsp;<i class="rel-one fi-like selector" id="rel_like"></i>&nbsp;
+			    &nbsp;<span class="rel-two selector review-underline" id="rel_meh">--</span>&nbsp;
+                            &nbsp;<i class="rel-three fi-dislike selector" id="rel_dislike"></i>&nbsp;
+			    <td>
+		</tr>
+	</table>
+	<input type="submit" class="button expand submit-review secondary-color-bg" ng-disabled="!form.$dirty" value="Submit Review" style="margin-right: 20px; margin-top: 12px"></input>
+	</div>
+</form>
+<hr class="primary-color-outline" />
+<div class="row collapse reviews-holder" >
+	{% for review in reviews %}
+		{% include "review_detail.html" with review=review %}
+		<hr class="primary-color-outline" />
+	{% empty %}
+		<h2>No reviews submitted yet</h2>
+	{% endfor %}
+</div>
+

@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<div class="contain-to-grid sticky primary-color-bg">
+<nav class="top-bar primary-color-bg" data-topbar role="navigation" id="navbar">
+	<div class="row collapse">
+	<div class="small-12 column">	
+	<ul class="title-area">
+		<li class="name">
+			<h1><a href="#">APHive</a></h1>
+		</li>
+		<li class="has-form">
+			<form class="row collapse">
+				<div class="large-8 small-9 columns">
+					<input type="text" placeholder="Search APIs" id="search_box">
+				</div>
+				<div class="large-4 small-3 columns">
+					<button type="submit" class="success button expand">Search</button>
+				</div>
+			</form>
+		</li>
+	</ul>
+	</div>
+	</div>
+</nav>
+</div>
+<script src= {% static "APHive/js/navbar.js" %}></script>

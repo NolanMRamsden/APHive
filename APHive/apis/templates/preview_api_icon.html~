@@ -1,0 +1,13 @@
+<div class="service" onclick="location.href='{% url 'apis:detail' api.id %}';">
+	<div class="service-icon-box">
+		<img src={{ api.icon.url }} alt={{ api.title }} class="service-icon">
+	</div>
+	<h2 class="service-heading">{{ api.title }}</h2>
+	<a class="service-heading" href="{% url 'members:detail' api.author.id %}">{{ api.author.full_name }}</a>
+	<p class="service-description">
+		{% block hover_text %} 	
+		{{ api.brief_desc }}
+		{% endblock hover_text %} 	
+	</p>
+</div>
+

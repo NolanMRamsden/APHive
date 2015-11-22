@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.accordion-navigation > a:after {
+  content: "⇩";
+  padding-left: 5px;
+  float: right;
+  font-size: 20px; }
+.accordion-navigation.active > a:after {
+  content: "⇧"; }
+
+.section-holder {
+  padding: 10px;
+}
+
+.tab-header {
+  border-radius: 15px 15px 0 0;
+  border: 1px solid purple;
+  border-bottom: 0;
+}
+
+.tab-title.active {
+  border-bottom: 1px solid white;
+}

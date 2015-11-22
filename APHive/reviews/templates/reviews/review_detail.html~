@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="small-9 column review-holder">	
+		<div>
+		<a href="{% url 'members:detail' review.writer.id %}" class="member-link primary-color">{{review.writer.full_name}}</a>
+		<span class="submitted-date">&nbsp;- {{review.submitted}}</span>
+		</div>
+		<p class="review-text">{{ review.text }}</p>
+	</div>
+	<div class="small-3 column thumbs-holder">
+		{% if review.usability == True %}
+			<h5>usable  <span class="like"><i class="fi-like"></i></span></h5>
+		{% elif review.usability == False %}
+			<h5>usable  <span class="dislike"><i class="fi-dislike"></i></span></h5>
+		{% else %}
+			<h5>usable  --</h5>
+		{% endif %}
+		{% if review.documentation == True %}
+			<h5>docs  <span class="like"><i class="fi-like"></i></span></h5>
+		{% elif review.documentation == False %}
+			<h5>docs  <span class="dislike"><i class="fi-dislike"></i></span></h5>
+		{% else %}
+			<h5>documentation  --</h5>
+		{% endif %}
+		{% if review.reliability == True %}
+			<h5>reliable  <span class="like"><i class="fi-like"></i></span></h5>
+		{% elif review.reliability == False %}
+			<h5>reliable  <span class="dislike"><i class="fi-dislike"></i></span></h5>
+		{% else %}
+			<h5>reliable  --</h5>
+		{% endif %}		
+	</div>
+
+</div>

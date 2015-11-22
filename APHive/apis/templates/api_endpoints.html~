@@ -1,0 +1,8 @@
+<h2>Endpoints go here</h2>
+{% for endpoint in endpoints %}
+
+
+{% empty %}
+
+
+{% endfor %}

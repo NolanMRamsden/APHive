@@ -1,0 +1,24 @@
+<!-- navbar -->
+<div class="contain-to-grid sticky">
+<nav class="top-bar primary-color-bg" data-topbar role="navigation">
+	<div class="row collapse">
+	<div class="small-12 column">	
+	<ul class="title-area">
+		<li class="name">
+			<h1><a href="#">APHive</a></h1>
+		</li>
+		<li class="has-form">
+			<div class="row collapse">
+				<div class="large-8 small-9 columns">
+					<input type="text" placeholder="Search APIs">
+				</div>
+				<div class="large-4 small-3 columns">
+					<a href="#" class="success button expand">Search</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+	</div>
+	</div>
+</nav>
+</div>

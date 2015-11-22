@@ -1,0 +1,18 @@
+from django import template
+from reviews.models import Review
+
+register = template.Library()
+
+@register.inclusion_tag('review_index.html')
+def reviews_for_api(api_id):
+	reviews = Review.objects.filter(api_id=api_id).orderby('-submitted')
+	total = reviews.count()
+	usable_percent = (reviews.filter(usability='true').count() * 100) / total
+	doc_percent = (reviews.filter(documentation='true').count() * 100) / total
+	reliable_percent = (reviews.filter(reliability='true').count() * 100) / total
+	return {
+		'reviews':reviews,
+		'doc_percent':doc_percent,
+		'usable_percent':usable_percent,
+		'reliable_percent':reliable_percent,
+	}
